@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await fetch("/activities");
       const activities = await response.json();
+  const searchInput = document.getElementById("search-input");
+  const categoryFilter = document.getElementById("category-filter");
+  const sortSelect = document.getElementById("sort-select");
+
+  let allActivities = {};
 
       // Clear loading message
       activitiesList.innerHTML = "";
